@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>超时与网络异常</title>
+    <style>
+        #res {
+
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <button>发送请求</button>
+    <div id="res"></div>
+    <script>
+ const btn=document.getElementsByTagName('button')[0];
+ const res=document.querySelector('#res');
+ btn.addEventListener('click',function(){
+     const xhr=new XMLHttpRequest();
+     //超时设置
+     xhr.timeout=2000;
+     //超时回调函数
+     xhr.ontimeout=()=>{
+         alert('连接超时')
+
+     }
+     xhr.onerror=()=>{
+        alert('网络异常')
+
+
+
+     }
+     xhr.open('GET','http://127.0.0.1:8000/netdelay');
+     xhr.send();
+     xhr.onreadystatechange=function(){
+       if (xhr.readyState===4){
+
+        if(xhr.status>=200&&xhr.status<300){
+       res.innerHTML=xhr.response;
+
+
+
+        }
+
+       }
+
+
+
+
+     }
+
+
+
+
+ })
+
+
+
+    </script>
+</body>
+</html>
