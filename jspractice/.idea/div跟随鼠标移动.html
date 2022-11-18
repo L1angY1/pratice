@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style type="text/css"> 
+body{
+height: 1000px;
+}
+
+#box1{
+width: 100px;
+height: 100px;
+background-color: red;
+position:absolute;
+}
+</style>
+<script type="text/javascript">
+window.onload=function(){
+var b1=document.getElementById("box1");
+
+document.onmousemove=function(event){
+event=event||window.event;
+var st=document.documentElement.scrollTop||document.body.scrollTop;
+// var left=event.pageX-50;//当前窗口
+// var top=event.pageY-50;    
+var left=event.clientX-50;//可视化窗口
+var top=event.clientY-50+st;
+b1.style.left=left+"px";
+b1.style.top=top+"px";
+
+
+}
+var b2=document.getElementById("box2");
+b2.onmousemove=function(event){
+    event=event||window.event;
+    event.cancelBubble=true;
+}
+}
+
+
+
+</script>
+</head>
+<body id="body">
+<div id="box2" style="width: 400px;height: 600px;background-color: aquamarine;" ></div>
+    <div id="box1"></div>
+</body>
+</html>

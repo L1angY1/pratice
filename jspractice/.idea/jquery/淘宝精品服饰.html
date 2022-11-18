@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta  name="referrer" content="never">
+    <title>Document</title>
+    <script src="jquery.min.js">    
+    </script>
+     <script>
+        $(function(){
+           $("#left li").mouseover(function(){
+                var index=$(this).index();
+                $("#content div").eq(index).show();
+                
+                $("#content div").eq(index).siblings().hide();
+  
+  
+  
+           })
+        })
+      </script>
+    <style>
+        *{ margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        /* .wrapper{ 
+               position:absolute;
+               float: left;  
+
+
+        } */
+        #left{
+              width: 50px;
+              height: 300px;
+              float: left;
+              /* 设置浮动 */
+              border-collapse: collapse; 
+        }
+        li{
+          position: relative;
+          text-align: center;
+          /* 设置文字居中 */
+          /* margin-top: 100px; */
+          height: 100px;
+          line-height: 100px;
+         border: 1px solid black;
+        
+        }
+        a{
+           text-decoration: dashed;
+           /* 去除下划线 */
+
+
+        }
+        #content{
+           margin-top:6px;
+          float: left;
+          height: 300px;
+          overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <ul id="left">
+           <li><a href="">1</a></li>
+           <li><a href="">2</a></li>
+           <li><a href="">3</a></li> 
+        </ul>
+        <div id="content">
+              <div><a href=""><img src="img/2.jpg" alt="" style="height: 300px;width: 400px;"></a></div>
+              <div><a href=""><img src="img/3.png" alt="" style="height: 300px;width: 400px;"></a></div>
+              <div><a href=""><img src="img/5.png" alt="" style="height: 300px;width: 400px;"></a></div>
+            
+        </div>
+    </div>
+
+   
+</body>
+</html>

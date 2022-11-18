@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style type="text/css">
+      *{
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+
+
+
+      }
+    body{
+         font-style: 宋体;
+         font-size: 20px;
+
+    }
+    table{
+     border: 1px solid black;
+     border-collapse: collapse;
+    }
+  th,td{
+    border: 1px solid black;
+    
+
+
+  }
+  a{
+text-decoration: dashed;
+
+
+  }
+
+     </style>
+
+     <script type="text/javascript">  
+     function del(){
+         
+         var tr=this.parentNode.parentNode;
+         var name=tr.getElementsByTagName('td')[0].innerHTML;
+         var flag=confirm("确定删除"+name+"?");
+         if(flag){
+            tr.parentNode.removeChild(tr);
+
+
+         }
+        return false;
+
+
+
+     }
+       window.onload=function(){
+         var alla=document.getElementsByTagName('a');
+         for(var i=0;i< alla.length ;i++){
+           alla[i].onclick=del;
+
+
+
+         }
+
+         var adde=document.getElementById('submit');
+         adde.onclick=function(){
+           var addname=document.getElementById('na').value;
+           var addgender=document.getElementById('ge').value;
+           var addsalary=document.getElementById('sa').value;
+           var tr=document.createElement("tr");
+            tr.innerHTML="<td>"+addname+"</td>"+"<td>"+addgender+"</td>"+"<td>"+addsalary+"</td>"+"<td><a  herf='javascript:;'>删除</a></td>";
+           var a=tr.getElementsByTagName('a')[0];
+           a.onclick=del;
+          var tablel=document.getElementById("tab");
+           var tbody=tablel.getElementsByTagName('tbody')[0];
+           tbody.appendChild(tr);
+
+
+
+
+
+
+         }
+    // var adde=document.getElementById("submit");
+    //       adde.onclick=function(){ 
+    //         var addna=document.getElementById('na').value;
+    //           var addge=document.getElementById('ge').value;
+    //           var addsa=document.getElementById('sa').value;
+    //           var tr=document.createElement("tr");
+    //           tr.innerHTML="<td>"+addna+"</td>"+"<td>"+addge+"</td>"+"<td>"+addsa+"</td>"+"<td><a herf='javascript:;'>删除</a></td>";
+    //           var a=tr.getElementsByTagName("a")[0];
+
+    //         //   a.href="javascript:;"
+    //           a.onclick=del;
+    //           var tablelist=document.getElementById('tab');
+    //           var tbody=tablelist.getElementsByTagName('tbody')[0];
+
+    //           tbody.appendChild(tr);
+
+
+
+
+
+
+
+    //       }
+
+
+
+
+
+
+
+
+
+     }
+
+
+
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+      </script>
+</head>
+<body>
+<div>
+   <table id="tab">
+<tr>
+    <th>姓名</th>
+    <th>性别</th>
+    <th>收入</th>
+</tr>
+<tr>
+    <td>小肥</td>
+    <td>男</td>
+    <td>2000</td>
+    <td><a href="">删除</a></td>
+</tr>
+<tr>
+    <td>小宝</td>
+    <td>男</td>
+    <td>2500</td>
+    <td><a href="">删除</a></td>
+</tr>
+</table>
+
+
+
+<h4>提交</h4>
+
+<div>
+    <span>name:</span>
+    <input type="text" id="na" placeholder="名字">
+</div>
+<div> 
+    <span>gender:</span>
+    <input type="text" id="ge" placeholder="性别">
+</div>
+<div> 
+    <span>salary:</span>
+    <input type="text" id="sa" placeholder="收入">
+    </div>
+</div>
+<div>
+    <button id="submit">提交</button>
+</div>
+</div>
+
+</body>
+</html>

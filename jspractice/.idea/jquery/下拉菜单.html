@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .navli>a {
+      height: 21px;
+      background-color: rgb(121, 163, 149);
+
+    }
+    .navli ul li{
+        display: none;
+
+    }
+
+    .navli {
+      height: 21px;
+      width: 35px;
+      float: left;
+
+    }
+  </style>
+  <script src="jquery.min.js"></script>
+</head>
+
+<body>
+  <ul class="nav">
+    <li class="navli">
+      <a class="" href="#">微博</a>
+      <ul>
+        <li><a href="">私信</a></li>
+        <li><a href="">评论</a></li>
+        <li><a href="">@我</a></li>
+      </ul>
+    </li>
+    <li class="navli">
+      <a class="" href="#">微博</a>
+      <ul>
+        <li><a href="">私信</a></li>
+        <li><a href="">评论</a></li>
+        <li><a href="">@我</a></li>
+      </ul>
+    </li>
+
+
+  </ul>
+  <script>
+    $(function () {
+      //  $('.nav>li').mouseout(function(){
+      //         $(this).children("ul").hide()
+      //  })
+      //  $('.nav>li').mouseover(function(){
+      //         $(this).children("ul").show()
+
+      $('.nav>li').hover(function () {
+
+       
+
+      $(this).children("ul").stop().slideDown(200)
+
+
+      }, function () {
+      $(this).children("ul").stop().slideUp(200)
+
+
+      } )
+      
+         
+     } )
+
+  </script>
+</body>
+
+</html>

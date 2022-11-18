@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+
+
+    }
+
+    Person.prototype.toString = function () {
+
+        return "Person[name=" + this.name + ",age=" + this.age + "]";
+    }
+    var per = new Person("sun", 18,);
+    var per1 = new Person("wu", 19,);
+    var per2 = new Person("zhang", 15,);
+    var perarr = new Array(per, per1, per2)
+
+    function adultper(arr) {
+        var newArr = [];
+        for (var i = 0; i < perarr.length; i++) {
+            var p = arr[i]
+            if (p.age >= 18) {
+
+                newArr.push(p)
+            }
+        }
+        return newArr;
+
+
+    }
+
+    var result = adultper(perarr);
+
+    console.log(result);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        a {
+            float: left;
+            text-decoration: dashed;
+            width: 22px;
+            text-align: center;
+
+        }
+
+        .c-box {
+            float: left;
+            border: 1px solid black;
+            height: 19px;
+            width: 75px;
+            background-color: white;
+            margin: 15px 400px;
+            position: absolute;
+        }
+
+        .c-cl {
+            float: left;
+            width: 25px;
+
+        }
+
+        /* .a-form{
+            position: relative;
+            height: 50px;
+            background-image: linear-gradient(to right, rgb(173, 224, 193), rgb(104, 94, 139));
+
+
+        } */
+        .form {
+
+            height: 50px;
+            background-image: linear-gradient(to right, rgb(173, 224, 193), rgb(104, 94, 139));
+            
+        }
+        .all-form{
+
+            height: 50px;
+            background-image: linear-gradient(to right, rgb(173, 224, 193), rgb(104, 94, 139));
+            
+
+
+        }
+
+        #container {
+
+            height: 200px;
+
+        }
+
+        .price {
+            float: left;
+            /* margin-left: 200px; */
+            position: absolute;
+            margin: 15px 800px;
+
+        }
+
+        .p-sum {
+            float: left;
+            /* margin-left: 200px; */
+            position: absolute;
+            margin: 15px 900px;
+
+
+
+        }
+
+        .allPrice {
+            position: absolute;
+
+        }
+
+        .all {
+            position: absolute;
+            float: left;
+            width: 40px;
+            margin: 15px 800px;
+
+
+        }
+
+        #allPrice {
+            /* float: left; */
+            width: 35px;
+            position: absolute;
+            margin-left: 200px;
+            /* position: relative; */
+            margin: 15px 755px;
+            height: 19px;
+        }
+
+        #count {
+            position: absolute;
+            float: left;
+            width: 25px;
+            margin: 15px 700px;
+        }
+
+        #t-count {
+
+            position: absolute;
+            float: left;
+            width: 35px;
+            margin: 15px 650px;
+        }
+
+        .ck {
+            /* float: left; */
+            width: 50px;
+            position: absolute;
+
+            /* position: relative; */
+            margin: 15px 100px;
+            height: 19px;
+        }
+
+        .item {
+
+            position: absolute;
+            margin: 15px 100px;
+            height: 19px;
+
+
+        }
+
+        .bt {
+
+            float: left;
+            /* margin-left: 200px; */
+            position: absolute;
+            margin: 6px 860px;
+            width: 35px;
+        }
+        .del{
+            width: 100px;
+            position: absolute;
+
+            /* position: relative; */
+            margin: 15px 200px;
+            height: 19px;
+            color: black;
+        }
+        .add-form{
+            opacity: 0.4;
+        /* background-image: to right,red,red; */
+                
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="form">
+            <div class="item"><input type="checkbox" class="it-check"></div>
+            <div class="price">￥15</div>
+            <div class="c-box"><a href="javascript:;" class="reduction">-</a> <input type="text" value="0" class="c-cl">
+                <a href="javascript:;" class="increment">+</a>
+                <button class="bt">删除</button>
+            </div>
+            <div class="p-sum">0.00</div>
+        </div>
+
+        <div class="form">
+            <div class="item"><input type="checkbox" class="it-check"></div>
+            <div class="price">￥15</div>
+            <div class="c-box"><a href="javascript:;" class="reduction">-</a> <input type="text" value="0" class="c-cl">
+                <a href="javascript:;" class="increment">+</a>
+                <button class="bt">删除</button>
+            </div>
+            <div class="p-sum">0.00</div>
+        </div>
+        <div class="form">
+            <div class="item"><input type="checkbox" class="it-check"></div>
+            <div class="price">￥15</div>
+            <div class="c-box"><a href="javascript:;" class="reduction">-</a> <input type="text" value="0" class="c-cl">
+                <a href="javascript:;" class="increment">+</a>
+                <button class="bt">删除</button>
+            </div>
+            <div class="p-sum">0.00</div>
+        </div>
+        <div class="form">
+            <div class="item"><input type="checkbox" class="it-check"></div>
+            <div class="price">￥15</div>
+            <div class="c-box"><a href="javascript:;" class="reduction">-</a> <input type="text" value="0" class="c-cl">
+                <a href="javascript:;" class="increment">+</a>
+                <button class="bt">删除</button>
+            </div>
+            <div class="p-sum">0.00</div>
+        </div>
+        <div class="all-form">
+            <div class="allPrice">
+                <div class="ck"> <input type="checkbox" class="allC">全选</div>
+                <div class="del-a"><a href="javascript:;" class="del">删除所选</a></div>
+                <div id="t-count">总计</div>
+                <div id="count">0</div>
+                <div id="allPrice">总价</div>
+                <input type="text" value="0" class="all">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+        $(function () {
+            var sum = 0
+
+            //增加数量
+            $('.increment').click(function () {
+                // debugger
+                //    alert($(this).siblings("input").val())
+                //定义一个参数获取当前input元素的value值
+                var n = $(this).siblings(".c-cl").val();
+                // $(this).siblings(".c-cl").val("")
+                n++;
+                // var b1=Number(n)+1
+                // $(this).siblings(".c-cl").removeAttr('disabled')
+
+                $(this).siblings(".c-cl").val(n);
+                //获取单价
+                var price = $(this).parent(".c-box").siblings(".price").text();
+                //截取数字
+                p = price.substr(1); //substr(a,b),从字符串的数组索引a（为number）开始截取，b为截取的字符个数；
+
+                var pr = (p * n).toFixed(2)//保留两位小数
+
+                $(this).parent().siblings('.p-sum').text(pr);
+                getSum();
+
+            })
+            //减少数量
+            $('.reduction').click(function () {
+                var n = $(this).siblings(".c-cl").val()
+                var price = $(this).parent(".c-box").siblings(".price").text();
+                p = price.substr(1);
+
+                if (n > 1) {
+                    n--;
+                    $(this).siblings(".c-cl").val(n);
+                    // p = price.substr(1); 
+                    var pr = (p * n).toFixed(2)//保留两位小数
+                    $(this).parent().siblings('.p-sum').text(pr);
+                    getSum();
+                } else {
+                    n = 0;
+                    $(this).siblings(".c-cl").val(n);
+                    var pr = (p * n).toFixed(2)//保留两位小数
+                    $(this).parent().siblings('.p-sum').text(pr);
+                    getSum();
+                }
+            })
+            $(".c-cl").change(function () {
+                var n = $(this).val();
+                var p = $(this).parent(".c-box").siblings(".price").text();;
+                p = p.substr(1);
+                var pr = (p * n).toFixed(2)//保留两位小数
+                $(this).parent().siblings('.p-sum').text(pr);
+                getSum();
+
+            })
+            //总和模块
+            function getSum() {
+                var count = 0;
+                var money = 0;
+                $('.c-cl').each(function (i, ele) {
+                    count += parseInt($(ele).val())
+
+                })
+                $('.p-sum').each(function (i, ele) {
+                    money += parseInt($(ele).text())
+
+
+                })
+                $('#count').text(count);
+                $('.all').val(money);
+
+            }
+        //    debugger;
+            //1.全选按钮的响应函数
+            $(".allC").change(function () {
+                //  console.log($(this).prop("checked"))
+                //发生了改变就把“checked”的值赋予“it-check”
+                if($(this).prop('checked')){
+                $('.form').addClass('add-form')
+                }
+                else{
+                    $('.form').removeClass('add-form')
+
+
+                }
+                $('.it-check').prop("checked", $(this).prop("checked"))
+
+
+            })
+            //如过被选中的等于所有的复选框数量，则给全选赋值“checked”
+
+            //    console.log($(".it-check").length);
+            //  console.log($(".it-check:checked").length);
+            //2.单选按钮的响应函数
+            $(".it-check").change(function () {
+                //复选框所属元素的类添加
+             if($(this).prop("checked")){
+                $(this).parents('.form').addClass("add-form")
+             }else{
+                $(this).parents('.form').removeClass("add-form")
+             }
+              
+                if ($('.it-check:checked').length === $(".it-check").length) {
+                    $(".allC").prop("checked", true);
+                }
+                else {
+
+                    $(".allC").prop("checked", false);
+                }
+            })
+            //删除按钮的绑定事件
+            $('.bt').click(function () {
+               
+                   $(this).parents('.form').remove();
+                   getSum();
+                
+            })
+            //删除复选框的内容
+            $('.del').click(function(){ 
+            $('.it-check:checked').parents('.form').remove();
+            getSum();
+            })
+            
+        })
+
+
+    </script>
+</body>
+
+</html>

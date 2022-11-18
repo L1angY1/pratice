@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #outer {
+            width: 420px;
+            height: 320px;
+            margin: 0px auto;
+            background-color: aquamarine;
+            /* padding:10px; */
+            overflow: hidden;
+            position: relative;
+        }
+        li {
+            float: left;
+            margin: 10px;
+        }
+        ul {
+            /* width: 1260px; */
+            position: absolute;
+            /* left: -410px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <!-- 创建一个ul -->
+
+        <ul id="imglist">
+            <li>
+                <img src="img/2.jpg" style="width:400px;height: 300px;">
+            </li>
+            <li>
+                <img src="img/3.png" style="width:400px;height: 300px;">
+            </li>
+            <li>
+                <img src="img/5.png" style="width:400px;height: 300px;">
+            </li>
+
+
+
+
+        </ul>
+
+        <!-- <div id="navDiv">
+                          <a href="javascript:;"></a>
+                          <a href="javascript:;"></a>
+                          <a href="javascript:;"></a>
+                          <a href="javascript:;"></a> 
+
+                </div>  -->
+    </div>
+    <script>
+  $(function(){
+      //1.元素.trigger(“事件”)；
+      $('ul').trigger(function(){
+
+
+
+
+
+      })
+
+
+
+
+  })
+
+
+    </script>
+</body>
+
+</html>

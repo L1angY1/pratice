@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script type="text/javascript">
+window.onload=function(){
+let b1=document.getElementById("b1");
+b1.onmousewheel=function(e){
+// alert("niubi")
+e=event||window.event;
+//e.wheelDelta可以获取鼠标滚轮滚动的方向，火狐不支持，向下-120，向上+120
+//e.detail火狐支持，向上-3，向下+3
+if(e.wheelDelta>0||e.detail<0){
+// alert("向上")
+b1.style.height=b1.clientHeight-10+"px"   
+
+}else{
+ b1.style.height=b1.clientHeight+10+"px"   
+// alert("向下")
+
+
+}
+return false;
+}
+//DOMMouseScroll用于火狐，且该事件需要使用addEventListener()函数来绑定
+// bind(b1,"DOMMouseScroll",b1.onmousewheel);
+
+
+
+
+}
+    function bind(obj, eventStr, callback) {
+        if (obj.addEventListener) {
+            obj.addEventListener(eventStr, callback, false);
+        }
+        else {
+            obj.attachEvent("on" + eventStr, function () {
+
+
+                callback.call(obj);//兼容ie8且改变浏览器调用使用了call（）；  
+            });
+
+
+
+
+}}
+    </script>
+
+</head>
+<body>
+ <div id="b1" style="width: 100px;height: 100px;background-color: red;position: absolute;">
+
+ </div>   
+</body>
+</html>

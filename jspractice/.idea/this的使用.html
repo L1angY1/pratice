@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    // 一函数形式调用时，就是函数下的window
+    //一方法形式调用时，就是方法下的对象
+    // function fun(){
+    //     console.log(this);
+    // }
+    // name="wu";
+    // var obj={
+    //     name:"sun",
+    //     sayname:fun
+    // }
+    // var obj2={
+    //     name:"sha",
+    //     sayname:fun
+    // }
+    // obj.sayname();//输出的是对象里面的
+    // fun();//输出window里面的
+
+
+    // function fun(){
+    //     console.log(this.name);
+    // }
+    // var obj={
+    //     name:"sun",
+    //     sayname:fun
+    // }
+    // var name="yang" ;
+    // obj.sayname();//输出对象里面的name为sun
+    // fun();//输出全局的name为yang
+
+
+    function fun() {
+        console.log(this.name);
+    }
+
+    var obj = {
+        name: "sun",
+        sayname: fun
+    }
+     var name = "yang";
+     obj.sayname();
+
+
+
+</script>
+
+</body>
+</html>

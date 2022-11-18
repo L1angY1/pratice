@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $(function () {
+            var tarobj = {};
+            var obj = {
+                id: 1,
+                name: "peach",
+                messge:{
+
+                    type:"string",
+
+                }
+            }
+            //$extend(tarobj,obj),会覆盖原来的obj；$.extend([deep],tarobj,obj})
+            //deep为true为深拷贝，d为false则为浅拷贝（浅拷贝指的是把被拷贝的对象的复杂数据类型的资质拷贝给目标对象，修改目标对象会影响被拷贝对象）
+            $.extend(true,tarobj, obj);
+             console.log(tarobj);
+      
+           tarobj.messge.type="num";
+           console.log(obj);
+           })  
+
+
+    </script>
+</body>
+
+</html>

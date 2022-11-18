@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    // function fun() {
+    //    alert(this);
+    // }
+    //
+    // var obj = {
+    //
+    // }
+   // fun(obj);//window对象
+   //  fun.apply(obj);//obj对象
+
+
+    // function fun() {
+    //     alert(this.name);
+    //
+    // }
+    //
+    // var obj = {
+    //     name: "obj",
+    //     sayname: function () {
+    //         alert(this.name)
+    //
+    //     }
+    // }
+    // var obj2 = {
+    //     name: "obj2",
+    //
+    // }
+    //
+    // obj.sayname();//输出0bj
+    // obj.sayname.apply(obj2)//输出obj2
+
+
+
+
+    function fun(a,b) {
+        // alert(this.name);
+        console.log(a);
+        console.log(b);
+    }
+
+    var obj = {
+        name: "obj",
+        sayname: function () {
+            alert(this.name)
+
+        }
+    }
+    var obj2 = {
+        name: "obj2",
+
+    }
+
+    // obj.sayname();//输出0bj
+    // obj.sayname.apply(obj2)//输出obj2
+
+    // fun.call(obj,2,3);
+    // fun.apply(obj2,[2,3])//call和apply的区别
+</script>
+</body>
+</html>

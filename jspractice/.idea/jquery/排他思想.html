@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+         *{
+             margin: 0;
+             padding: 0;
+             /* list-style: none; */
+         }
+         div{
+          width: 50px;
+          height: 50px;
+          background-color: aquamarine;
+          display: block;
+         }
+         /* #box1{
+                width:500px;
+         } */
+         button{
+              margin: 0 auto;
+         }
+    </style>
+</head>
+<body>
+    <div id="box1">
+    <div><button>1</button></div>
+    <div><button>2</button></div>
+    <div><button>3</button></div>
+    <div><button>4</button></div>
+    </div>
+    
+    
+    <script>
+         $(function(){
+            $('button').click(function(){
+                //  alert(111)
+                $(this).parent('div').css('background','black');
+                // $(this).siblings("button").css("backgrond","")
+
+
+
+
+
+            })
+
+
+
+
+
+
+         })
+
+
+
+    </script>
+</body>
+</html>

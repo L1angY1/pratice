@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var item = document.getElementsByName("items");
+            var cab = document.getElementById("checkallbt");
+            cab.onclick = function () {
+
+                // var item = document.getElementsByName("items");
+                for (i = 0; i < item.length; i++) {
+                    item[i].checked = true;
+                }
+            }
+            // 全选
+            var cnb = document.getElementById("checknobt");
+            cnb.onclick = function () {
+
+                // var item = document.getElementsByName("items");
+                for (i = 0; i < item.length; i++) {
+                    item[i].checked = false;
+                }
+            }
+            // 全不选
+            var cabx = document.getElementById("checkallbox");
+            cabx.onclick = function () {
+                // var item = document.getElementsByName("items");
+                for (i = 0; i < item.length; i++) {
+                    item[i].checked = this.checked;
+                }
+
+
+            }
+            // 一键全勾选
+            var reb = document.getElementById("checkrebt");
+            reb.onclick = function () {
+
+                // var item = document.getElementsByName("items");
+                for (i = 0; i < item.length; i++) {
+                    //     switch (true) {
+                    //         case item[i].checked == true:
+                    //             item[i].checked = false;
+                    //             break;
+                    //         default:
+                    //             item[i].checked = true;
+                    //     }
+                    // }
+                    item[i].checked = !item[i].checked;
+                }
+            }
+            // 反选
+
+            for (var i = 0; i < item.length; i++) {
+
+                item[i].onclick = function () {
+                    cabx.checked = true;
+
+                    for (var j = 0; j < item.length; j++) {
+                        if (!item[j].checked) {
+                            cabx.checked = false;
+
+
+                        }
+
+                    }
+
+                }
+
+
+            }
+            // 判断
+            var sbtn = document.getElementById("sbt")
+            sbtn.onclick = function () {
+
+                for (var i = 0; i < item.length; i++) {
+                    if (item[i].checked) {
+                        alert(item[i].value);
+
+
+                    }
+
+
+                }
+
+
+            }
+
+
+        }
+
+
+    </script>
+
+
+</head>
+<body>
+
+
+<form method="post" action="">
+    选择你喜欢的运动：<input type="checkbox" id="checkallbox">全选/全不选</br>
+    <input type="checkbox" name="items" value="足球">足球
+    <input type="checkbox" name="items" value="篮球">篮球
+    <input type="checkbox" name="items" value="羽毛球">羽毛球</br>
+    <input type="button" id="checkallbt" value="全选">
+    <input type="button" id="checknobt" value="全不选">
+    <input type="button" id="checkrebt" value="反选">
+    <input type="button" id="sbt" value="提交">
+
+</form>
+</body>
+</html>

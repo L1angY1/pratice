@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let</title>
+</head>
+<body>
+  <script>
+      //声明变量
+    //   let a ;
+    //   let b,c,d;
+      //2.let不能重复声明
+    //   let a=100;
+    //   let a=19;
+      //会报错，显示不能声明
+      //3.块级作用域
+//      {
+//  let girl="niu"
+
+
+//      }
+//  console.log(girl);
+//4.不存在变量提升
+// console.log(song);
+// let song='nihao'
+
+//5.不影响作用域链
+{
+ let boy='牛子哥'
+ function niu(){
+
+ console.log(boy);
+
+ }
+niu();
+
+
+}
+
+  </script>  
+</body>
+</html>

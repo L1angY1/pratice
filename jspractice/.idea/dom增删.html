@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            list-style: none;
+        }
+
+        #inner {
+            margin: 10px;
+            padding: 15px;
+            width: 520px;
+        }
+
+        #btlist {
+            right: 400px;
+            border: 2px solid #478b5a;
+            width: 166px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            myclick("bt1", function () {
+                var li = document.createElement("li");
+                var nct = document.getElementById('box').value;
+                var nc = document.createTextNode(nct);
+                //   var nct=document.getElementById("box").value;
+                //   nc=nct;
+                var ct = document.getElementById("city");
+                li.appendChild(nc);
+                ct.appendChild(li);
+
+            })
+            myclick("bt2", function () {
+
+
+                var b1 = document.getElementById('box1').value;
+                // console.log(typeof b1)
+
+                // console.log(typeof bb1)
+                var list = document.getElementsByTagName('li');
+                // console.log(typeof list[1].innerHTML)
+                // var b=list.innerHTML;
+                // console.log(b)
+                // for (i = 0; i < list.length; i++) {
+                //     if (list[i].innerHTML !== b1) {
+                //         var j=0;
+                //         j += 1;
+
+                //         if (j > lis.length) {
+                //             document.write('error!!')
+                //         }
+                //         return;
+
+                //     }
+                //     else {
+                //         var li = document.createElement('li')
+                //         var b2 = document.getElementById('box2').value;
+                //         var bb2 = document.createTextNode(b2);
+                //         var city = document.getElementById('city');
+                //         li.appendChild(bb2);
+                //         city.replaceChild(li, list[i]);
+
+
+
+
+
+
+                //     }
+
+                //     return;
+
+
+
+                // }
+
+
+                for (i = 0; i < list.length; i++) {
+                    if (list[i].innerHTML == b1) {
+                        var li = document.createElement('li')
+                        var b2 = document.getElementById('box2').value;
+                        var bb2 = document.createTextNode(b2);
+                        var city = document.getElementById('city');
+                        li.appendChild(bb2);
+                        city.replaceChild(li, list[i]);
+
+                //         //  console.log('nihao ')
+
+                //     }
+                // else {
+                //     document.write('error!!!');
+
+
+                }
+
+
+
+
+                }
+                //    return;
+
+                // var bj = document.getElementsByTagName('li');
+                // var city=document.getElementById('city');
+                // city.replaceChild(l1,bj[0])
+
+            }
+
+            )
+
+
+
+
+        }
+
+        function myclick(id, fun) {
+            var btn = document.getElementById(id);
+            btn.onclick = fun;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="total">
+        <div id="inner">
+            <p>
+                选择城市
+            </p>
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+            </ul>
+            <div id="btlist">
+                <div> <button id="bt1">创建</button> </div>
+                <div><input type="text" id="box" placeholder="输入城市名"></div>
+                <div><input type="text" id="box1" placeholder="输入城市名"></div>
+                <div> <button id="bt2">替换</button> </div>
+                <div><input type="text" id="box2" placeholder="输入城市名"></div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

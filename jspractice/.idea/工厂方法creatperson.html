@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function creatperson(name, age, gender) {
+        var obj = {
+            name: name,
+            age: age,
+            gender: gender,
+            sayname: function () {
+                document.write(this.name)
+            }
+
+        }
+        return obj;
+    }
+
+    var obj = creatperson("sun", 18, "man");
+    var obj2 = creatperson("zhu", 17, "man");
+    obj2.sayname();
+
+
+
+
+</script>
+</body>
+</html>

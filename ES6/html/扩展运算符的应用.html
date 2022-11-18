@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>  </div>
+    <div>  </div>
+    <div style="height: 50px;width: 100px;background-color: aquamarine;">  </div>
+    <script>
+        // const rm=['本泽马','莫德里奇']
+        // const parise=['梅西','内马尔']
+        //es5的方法 concat（）；
+        // const yhzj=rm.concat(parise);
+
+        //es6的方法
+        // const yhzj=[...rm,...parise]
+        // console.log(yhzj);
+
+
+        //数组的克隆
+        // const rm=['本泽马','莫德里奇']
+        // const ur=[...rm]
+        // console.log(ur);
+
+        //将伪数组变成真正的数组
+         const divs=document.getElementsByTagName('div')
+         //此时是伪数组
+         const divarr=[...divs]
+        
+         console.log(divs);
+         //[[Prototype]]: HTMLCollection
+         console.log(divarr);
+         //[[Prototype]]: Array(0)
+    </script>
+</body>
+</html>

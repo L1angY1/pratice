@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var b1 = document.getElementById("bt");
+            var ul = document.getElementsByTagName("ul")[0];
+            b1.onclick = function () {
+                //  alert("caonima ")
+                var l1 = document.createElement("li");
+                l1.innerHTML = "<a href='javascript:;' class='link''>新增的</a>"
+
+                ul.appendChild(l1)
+            }
+            ul.onclick = function (e) {
+                e = event || window.event;
+                x = e.target;
+                if (x.className == "link") {
+                    alert("你好")
+                }
+                else {
+
+                    return false;
+
+                }
+            }
+
+        }
+    </script>
+
+
+
+</head>
+
+<body>
+    <div>
+        <button id="bt">增加一个</button>
+    </div>
+    <ul>
+        <li><a href="javascript:;" class="link">1</a></li>
+        <li><a href="javascript:;" class="link">2</a></li>
+        <li><a href="javascript:;" class="link">3</a></li>
+
+
+    </ul>
+
+
+</body>
+
+</html>

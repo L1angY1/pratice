@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>确认质数</title>
+    <script type="text/javascript" >
+          var i = prompt("输入一个数");
+
+            var flag = true;
+            for (var j=2;j<i;j++){
+                if (i%j==0){
+                    flag=false;
+                 alert(i+"不是质数")
+                    break;
+                }
+            }
+            if (flag){
+                alert(i+"是质数"+"<br/>");
+
+        }
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

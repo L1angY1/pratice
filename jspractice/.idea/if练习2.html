@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var n1  = +prompt("输入第一个数：");
+        var n2  = +prompt("输入第二个数：");
+        var n3  = +prompt("输入第三个数：");
+        if(n1 < n2 && n1 < n3){
+            if (n2 < n3){
+                document.write(n1 +","+ n2 +","+ n3);
+            }
+         else {
+                document.write(n1 +","+  n3 +","+  n2);
+            }
+        }
+       else if(n2 < n1 && n2 < n3){
+            if (n1 < n3){
+                document.write(n2 +","+  n1 +","+ n3);
+            }
+            else {
+                document.write(n2 +","+ n3 +","+ n1);
+            }
+        }
+        else{
+            if (n1 < n2){
+                document.write(n3 +","+ n1 +","+ n2);
+            }
+            else {
+                document.write(n3 +","+ n2 +","+ n1);
+            }
+        };
+    </script>
+</head>
+<body>
+
+</body>
+</html>

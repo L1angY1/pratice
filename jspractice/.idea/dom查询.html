@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+       window.onload=function () {
+           var bod=document.body;//对body的引用
+           console.log(bod);
+
+           var html=document.documentElement;//保存根标签
+           console.log(html)
+
+
+           var body=document.getElementsByTagName("body")
+           console.log(body.length)
+
+           //选择器
+           var d = document.querySelector(".box2 div")
+           console.log(d.innerHTML)
+
+           var b1=document.getElementsByClassName("box1")
+           console.log(b1.length);
+           // var bd = document.getElementsByTagName("body")
+           // console.log(bd)
+            var a=document.all;//代表页面中所有元素
+             console.log(a);
+
+       }
+
+    </script>
+</head>
+<body>
+<div  class="box2">
+    <div>我是猪</div>
+</div>
+<div  class="box1">
+    <div>我是猪</div>
+</div>
+<div  class="box1">
+    <div>我是猪</div>
+</div>
+</body>
+</html>

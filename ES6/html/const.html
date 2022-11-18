@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>const定义常量</title>
+</head>
+<body>
+    <script>
+       //不能修改的量称为常量
+       //声明常量
+    //    const SCHOOL='工大';
+
+       //1.一定要初始值
+    //    const ;
+       //会直接报错，不可以像像var和let一样先声明后赋值
+
+       //2.声明的常量不能修改
+    //    SCHOOL='niuzi'
+       //直接报错
+
+       //3.块级作用域
+    //    {
+    //       const A='niuniu'
+
+    //    }
+    //      console.log(A);
+         //找不到，直接报错
+
+         //4.对于数组和对象的修改，不算做对常量的修改，不会报错
+         const LPL=['uzi','love7','niuzige']
+         LPL.push('niubi')
+         console.log(LPL);
+
+    </script>
+</body>
+</html>

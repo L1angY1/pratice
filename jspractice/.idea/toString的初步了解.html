@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+    // function person(name, age, gender) {
+    //     this.name = name;
+    //     this.age = age;
+    //     this.gender = gender;
+    //
+    // }
+    //
+    // person.prototype.toString = function () {
+    //
+    //     return "person[name=" + this.name + ",age=" + this.age + ",gender" + this.gernder + "]";
+    // }
+    // var per = new person("sun", 18, "man");
+    // console.log(per);
+
+
+
+    function person(name, age) {
+        this.name = name;
+        this.age = age;
+
+
+    }
+
+    person.prototype.toString = function () {
+
+        return "person[name=" + this.name + ",age=" + this.age + "]";
+    }
+    var per = new person("sun", 18);
+    console.log(per);
+
+</script>
+</body>
+</html>

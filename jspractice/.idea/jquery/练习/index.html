@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <style>
+        *{
+           padding: 0;
+           margin: 0;
+       }
+       body{
+           background-color: #ffffff;
+       }
+       header>section{
+           width: 100%;
+           height: 50px;
+           font-size: 30px;
+           line-height: 30px;
+           text-align: center;
+           background-color: rgb(197, 193, 193);
+           padding-top: 10px;
+          
+       }
+       header>section>label{
+
+           /* 为了解决label和input对不齐的问题，需要设置label和input的vertical-align为一样的 */
+           vertical-align: middle;
+           padding-right: 50px;
+           
+       }
+       header>section>input{
+           display: inline-block;
+           height: 30px;
+           margin-top: 3px;
+           border: 1px solid rgb(160, 160, 160);
+           border-radius: 10px;
+           /* line-height: 30px; */
+           vertical-align: middle;
+           
+       }
+       #List{
+           margin: 0 auto;
+           text-align: center;
+           background-color: #ffffff;
+           height: auto;
+       }
+       #todocount, #donecount{
+           
+           /* background-color: chocolate; */
+           /* border-radius: 50%; */
+           margin-left: 110px;
+           font-size: 10px;
+           font-style: 微软雅黑;
+       }
+     
+       /* #todoList{
+            text-align: center; 
+          
+       } */
+       #todoList>li{
+           position: relative;
+           list-style: none;
+           margin: 0 auto;
+           width: 215px;
+           background-image:linear-gradient(to right,rgb(187, 226, 199),rgb(140, 210, 223))   ;
+           margin-top: 2px;
+           height: 20px;
+         
+          
+       }
+       #doneList>li{
+           position: relative;
+           list-style: none;
+           margin: 0 auto;
+           width: 215px;
+           background-image:linear-gradient(to right,rgb(187, 226, 199),rgb(140, 210, 223))   ;
+           margin-top: 2px;
+           height: 20px;
+          
+       }
+       #todoList>li::after{
+           content: "";
+           clear: both;
+           /*必须有这个display属性才可以清除浮动*/
+           display: block;
+       }
+       #doneList>li::after{
+           content: "";
+           clear: both;
+           /*必须有这个display属性才可以清除浮动*/
+           display: block;
+       }
+       #todoList>li>input
+       {   
+           position: relative;
+           float: left;
+           line-height: 20px;
+           margin: 0 auto;
+           
+       }
+       #doneList>li>input
+       {   
+           position: relative;
+           float: left;
+           line-height: 20px;
+           margin: 0 auto;
+       }
+       ol>li>input{
+        top: 4px;
+          
+        
+          
+
+       }
+       #todoList>li>p{
+           /* position: relative; */
+           font-size: 10px;
+           line-height: 20px;
+           color: rgb(105, 105, 105);
+           display: inline-block;
+           position: absolute;
+           left: 15px;
+       } 
+       #doneList>li>p{
+           /* position: relative; */
+           font-size: 12px;
+           line-height: 20px;
+           color: rgb(105, 105, 105);
+           display: inline-block;
+           position: absolute;
+           left: 15px;
+       } 
+       
+       #todoList>li>a{
+           display: inline-block;
+           position: absolute;
+           right: 0;
+           top: 4px;
+         
+           background-color: rgb(164, 165, 164);
+           width: 10px;
+           height: 10px;
+           border-radius: 50%;
+       }
+       #doneList>li>a{
+           display: inline-block;
+           position: absolute;
+           right: 0;
+           top: 5px;
+           background-color: rgb(164, 165, 164);
+           width: 10px;
+           height: 10px;
+           border-radius: 50%;
+       }
+       /* #todoList>li>a::after{
+           content: "删除";
+       } */
+   </style>
+</head>
+<body>
+    <header>
+        <section>
+            <label for="title">ToDoList</label>
+            <input type="text" name="title" id="title" placeholder="添加todo" required>
+        </section>
+       
+    </header>
+    <section id="List">
+        <h2>正在进行<span id="todocount">0</span></h2>
+        <ol id="todoList" class="demoBox">
+            <!-- <li>
+                <input type="checkbox" >
+                <p>123</p>
+                <a href="#">删除</a>
+                
+            </li> -->
+            <!-- <li><input type="checkbox"><p></p><a href="javascript:;"></a></li> -->
+        </ol>
+        <h2>已经完成<span id="donecount">0</span></h2>
+        <ol id="doneList">
+
+        </ol>
+    </section>
+    <script>
+        $(function(){
+            load();
+            $("#title").on("keydown",function(e){
+                if(e.keyCode==13){
+                  if($(this).val()==""){
+
+                    alert("请输入待办事项")
+                  }
+                else{
+                // debugger
+                var local=getData();//读取本地数据
+                local.push({title:$(this).val(),done:false})//存入新数据，更新数组
+
+                saveData(local);//存储数据到本地
+                // debugger
+                load();
+                $(this).val("");
+                }
+                }
+            
+              
+            })
+            //删除
+            $('ol').on('click','a',function(){
+                var data=getData();
+                var index=$(this).attr('id');
+                data.splice(index,1);
+                saveData(data);
+                load();
+            })
+          
+
+
+
+
+            //获取数据的方法
+            function getData() {
+                var data = localStorage.getItem("todolist");
+                if (data !== null) {
+                    return JSON.parse(data);//字符串转为数组
+                }
+                else {
+                    return [];
+                }
+            }
+
+            //存储数据   
+            function saveData(data) {
+                localStorage.setItem("todolist", JSON.stringify(data))
+                //存储的的数据需要先使用json.stringify（）变成字符串存储进我们的数组对象
+            }
+
+            //input复选框的单击响应函数
+            $('ol').on("click","input",function(){
+                var data=getData();
+                var index=$(this).siblings('a').attr("id");//获取子元素a标签的索引号
+                data[index].done=$(this).prop('checked');//将当前复选框的checked的布尔值赋予数组里元素方法done里面去
+                saveData(data);
+                load();
+
+
+            })
+
+
+
+
+
+          //渲染函数
+           function load(){
+            var data=getData();//获取本地数据
+            var todoCount=0;//定义一个变量来存储todoList的长度
+            var doneCount=0;//定义一个变量来存储doneList的长度
+            $('ol').empty();//遍历之前清空ol里面的元素 因为我们的页面显示的内容是通过本地数据的一个获取来表示的，如果不清空，则会出现相同的数据.
+             $.each(data,function(i,n){
+             //i为index，也就是我们这边的索引号 n则是domEle
+                if(n.done){
+                $('#doneList').prepend(" <li><input type='checkbox' checked='checked'><p>"+n.title+"</p><a href='javascript:;' id="+i+"></a></li>")
+                //添加子元素到第一个,添加到已经完成的列表里时，该元素的子节点复选框的check应该为checked；
+                 doneCount++;//加1
+             }else{
+                $('#todoList').prepend(" <li><input type='checkbox'><p>"+n.title+"</p><a href='javascript:;' id="+i+"></a></li>")
+                todoCount++;//加1
+             }
+
+             $('todocount').text(+todoCount);//给todocount赋值
+             $('donecount').text(+doneCount);//给donecount赋值
+
+
+
+
+             })
+
+
+
+        }
+        })
+    </script>
+</body>
+</html>

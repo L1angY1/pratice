@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script type="text/javascript">    
+window.onload=function()
+{
+var b1=document.getElementById("bt1");
+// b1.addEventListener("click",function(){
+// alert("first");
+
+// })
+// b1.addEventListener("click",function(){
+// alert("second");
+
+// })
+// b1.addEventListener("click",function(){
+// alert("third");
+
+// })//addEventListener("name",function(){},false)//最后一项布尔值默认为false；仅仅适用于ie8以上的，先绑定的先执行，attachEvent顺序相反；
+//使用addEventListener可以多次绑定事件
+
+bind(b1,"click",function(){
+alert("successs")
+})
+}
+
+
+function bind(obj,eventStr,callback){
+if(obj.addEventListener){
+obj.addEventListener(eventStr,callback,false);
+}
+else{
+obj.attachEvent("on"+eventStr,function(){
+
+
+    callback.call(obj);//兼容ie8且改变浏览器调用使用了call（）；  
+});
+
+
+
+
+}
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</head>
+<body>
+   <div>    
+<button id="bt1">确定</button>
+
+
+   </div> 
+</body>
+</html>

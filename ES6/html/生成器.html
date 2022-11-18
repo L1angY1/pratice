@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //一种特殊的函数
+        //异步编程 纯回调函数 
+
+    //     function *gen(){
+    //         console.log('1');
+    //         yield 'zhu'
+    //         //yield可以理解为分割符
+    //         console.log('2');
+    //         yield 'hao'
+
+    //     }
+    //     let i=gen();
+    //     i.next();
+    //     for (let v of gen()){
+    //  console.log(v);
+
+    //     }
+
+
+
+
+    
+    // function *gen(){
+    //          console.log('11');
+    //         let o=yield 'boy';
+    //         console.log(o);
+    //         let t=yield 222;
+    //         console.log(t);
+    //        let th= yield 333
+    //         console.log(th);
+    //     }
+    //     let i=gen();
+    //     console.log(i.next(""));
+    //     console.log(i.next("aaa"));
+    //     console.log(i.next('bbb'));
+    //     console.log(i.next('ccc'));
+
+
+
+       function one(){    
+       setTimeout(function(){
+       console.log("这是第1个");
+       iterator.next();
+       },1000)
+         }  
+         function two(){
+          
+       setTimeout(function(){
+       console.log("这是第2个");
+       iterator.next();
+       },1000)
+         }  
+         function three(){
+       setTimeout(function(){
+       console.log("这是第3个");
+       iterator.next();
+       },1000)
+         }
+      function * gen(){
+              yield one();
+              yield two();
+              yield three();
+              
+            
+      }
+     let iterator= gen();
+         iterator.next();
+
+
+
+
+    </script>
+</body>
+</html>

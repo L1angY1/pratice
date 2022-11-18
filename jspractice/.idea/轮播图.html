@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- <script type="text/javascript" src="轮播图tools.js"></script> -->
+    <style type="text/css">
+
+       *{
+             margin: 0;
+             padding: 0;
+             list-style: none;
+       }
+      #outer{
+              width: 420px;
+              height: 320px;
+              margin:0px auto;
+              background-color: aquamarine;
+              /* padding:10px; */
+              overflow: hidden;
+              position: relative;
+      }           
+      li{
+            float: left;
+            margin: 10px;
+
+
+      }
+      ul{
+           /* width: 1260px; */
+           position: absolute;
+           
+           /* left: -410px; */
+           
+
+
+
+      }
+
+      #navDiv{
+          position: absolute;
+             bottom:20px;
+            /* left: 165px; */
+
+
+
+
+
+      }
+
+
+      #navDiv a{
+              /* position: absolute; */
+              float: left;
+              /* 设置超链接浮动 */
+              /* display: block; */
+              width: 10px;
+              height: 10px;
+              background-color: rgb(245, 8, 8);
+              margin: 0 10px;
+              opacity: 0.5;
+              filter:alpha(opacity=50) ;
+      }
+      #navDiv a:hover{
+
+              background-color: rgb(199, 215, 224);
+
+
+
+      }
+      
+
+    </style>
+    <script type="text/javascript" src="JSTools.js">
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+                var imgList = document.getElementById("imglist");
+                var imgArr = document.getElementsByTagName("img");
+                // var ul=document.getElementsByTagName("ul")
+                imgList.style.width = imgArr.length * 420 + "px";
+                var navDiv = document.getElementById("navDiv");
+                navDiv.style.left = (400 - navDiv.offsetWidth) / 2 + "px";
+                //让navDi居中
+                var allA = document.getElementsByTagName("a");
+                //默认索引
+                var index = 0;
+                var timer;
+                allA[0].style.backgroundColor = "rgb(76, 143, 182)";
+                //第一个元素的背景色设置
+                for (var i = 0; i < allA.length; i++) {
+                    allA[i].num = i;
+                    allA[i].onclick = function () {
+                        clearInterval(timer);
+                        index = this.num;
+                        // imgList.style.left=-420*index+"px"
+                        move(imgList,"left",-420*index,10,function(){});
+                        autoChange();
+                        setA();
+                         
+                   
+
+
+
+
+
+
+                    }
+                
+                }
+                autoChange();
+
+                function setA() {
+                   
+                        for (var i = 0; i < allA.length; i++) {
+                            allA[i].style.backgroundColor = "";
+                        }
+                        allA[index].style.backgroundColor = "rgb(76, 143, 182)";
+                    } 
+              //自动轮播 
+            function autoChange() {
+                timer=setInterval(function () {
+                    index++; 
+                    if(index>=imgArr.length-1){
+                     
+                     index=0;
+                     imgList.style.left=0;
+                     
+
+                    }
+                    index%=imgArr.length;
+                   
+                    move(imgList, "left", -420 * index, 20, function () {
+                        setA()
+                    });
+                },3000)
+
+
+
+
+
+            }
+        }
+               
+                    
+           
+     
+
+                  
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <!-- 创建一个外部div -->
+    <div id="outer">
+        <!-- 创建一个ul -->
+
+                <ul id="imglist">
+                    <li>
+                        <img src="img/2.jpg" style="width:400px;height: 300px;">
+                    </li>
+                    <li>
+                        <img src="img/3.png" style="width:400px;height: 300px;">
+                    </li>
+                    <li>
+                        <img src="img/5.png" style="width:400px;height: 300px;">
+                    </li> 
+                    <li>
+                        <img src="img/2.jpg" style="width:400px;height: 300px;">
+                    </li>
+                
+                
+                
+                </ul>
+
+
+                <div id="navDiv">
+                          <a href="javascript:;"></a>
+                          <a href="javascript:;"></a>
+                          <a href="javascript:;"></a>
+                          <!-- <a href="javascript:;"></a> -->
+
+
+                </div>
+    </div>
+</body>
+</html>

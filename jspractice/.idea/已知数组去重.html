@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var array = [1, 2, 3, 4, 4, 3, 3, 5, 2, 6, 1];
+    
+    for (var i = 0; i < array.length; i++) {
+        for (var j = i + 1; j < array.length; j++) {
+            if (array[i] == array[j]) {
+                array.splice(j, 1);
+                j--;
+            }
+        }
+    }
+    console.log(array)
+
+
+
+   //  var arr = [1,2,3,4,4,3,3,5,2,6,1];
+   //  //定义一个数组
+   //  //想要进行数组去重，就是要通过循环遍历的方法，让每个数字都与他之后的数字进行比较，写出循环表达式
+   //  for(var i = 0 ; i < arr.length ; i++){
+   //      for(var j = i+1 ; j < arr.length ; j++){
+   //          //arr[j]需要从arr[i]后面的第一个数字开始进行比较,所以设置为j = i+1
+   //          if(arr[i] == arr[j]){
+   //
+   //              //调用splice方法，这个方法返回的就是修改之后的数组，所以不必再进行数组的其他操作
+   //              arr.splice(j,1);
+   //              //删除下标为j对应的元素,并且删除的个数只为1个
+   //              j--;
+   //              //删除操作完成后，如果不设置此操作，j开始执行下一次循环，值会加1，从而会跳过删除之后紧跟arr[j-1]的一个元素，避免多个元素相邻却无法实现去重的效果；
+   //
+   //          }
+   //      }
+   //  }
+   // document.write(arr);//[1,3,4,5,6]
+
+
+    function sortNumber(a,b)
+    {
+        return a - b
+    }
+
+    var arr = new Array(6)
+    arr[0] = "10"
+    arr[1] = "5"
+    arr[2] = "40"
+    arr[3] = "25"
+    arr[4] = "1000"
+    arr[5] = "1"
+
+    document.write(arr + "<br />")
+    document.write(arr.sort(sortNumber))//
+    // 若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。
+    // 若 a 等于 b，则返回 0。
+    //若 a 大于 b，则返回一个大于 0 的值。
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

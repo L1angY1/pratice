@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .back {
+
+            width: 80px;
+            height: 40px;
+            position: fixed;
+            right: 50px;
+            bottom: 100px;
+            background-color: rgb(207, 146, 71);
+            display: none;
+        }
+
+        .container {
+            height: 1500px;
+            width: 800px;
+            background-color: aquamarine;
+            margin: 500px auto;
+        }
+
+        a {
+
+            text-decoration: dashed;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="back"><a href="javascript:;">回到顶部</a></div>
+    <div class="container"></div>
+    <script>
+        $(function () {
+            var boxtop = $('.container').offset().top;
+            console.log(boxtop);
+
+            //    console.log(boxtop);
+            $(window).scroll(function () {
+                var scrtop = $(document).scrollTop();
+                if (scrtop >= boxtop) {
+                    $('.back').fadeIn();
+                } else {
+
+                    $('.back').fadeOut();
+                }
+               
+
+
+
+
+
+            }) 
+            $('.back').on('click', 'a', function () {
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 300)
+
+                })
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>

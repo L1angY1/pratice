@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+         .current{
+             
+         background-color: aquamarine;
+         }
+        div{
+            width: 100px;height: 100px;background-color: purple;
+
+
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        $(function () {
+        //     $("div").mouseover(function () {
+        //         $(this).css({
+        //            "background-color":"red",
+        //     })
+        // })
+        //事件处理on() 
+//    $('div').on({
+//           mouseenter:function(){
+                 
+//        $(this).css("background","red")
+
+//           },
+//         click:function(){
+//             $(this).css("background","black")
+
+//         },
+//         mouseleave:function(){
+
+//             $(this).css("background","white")
+
+//         }
+
+//    }) 
+   $("div").on("mouseenter mouseleave",function(){
+    //  alert(11)
+    // debugger;
+    // $(this).toggleClass("current");
+      $(this).toggleClass('current')
+   })
+   //2.on()可以事件委派
+
+
+
+   
+})
+    </script>
+</body>
+
+</html>

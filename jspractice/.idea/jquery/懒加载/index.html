@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            display: block;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+    </style>
+</head>
+<body style="">
+    <img data-lazy-src="https://picsum.photos/500/300?image=100" src="https://picsum.photos/500/300?image=100" data-comp="true" style="visibility: visible;">
+    <img data-lazy-src="https://picsum.photos/500/300?image=101" src="https://picsum.photos/500/300?image=101" data-comp="true" style="visibility: visible;">
+    <img data-lazy-src="https://picsum.photos/500/300?image=102" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+    <img data-lazy-src="https://picsum.photos/500/300?image=103" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+    <img data-lazy-src="https://picsum.photos/500/300?image=104" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+    <img data-lazy-src="https://picsum.photos/500/300?image=105" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+    <img data-lazy-src="https://picsum.photos/500/300?image=106" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+
+<!-- <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script> -->
+<script src="jquery-1.11.0.min.js"></script>
+<script src="EasyLazyload.js"></script>
+<script src="EasyLazyload.min.js"></script>
+<script>
+    lazyLoadInit({
+        coverColor:"white",
+        coverDiv:"<h1>test</h1>",
+        offsetBottom:0,
+        offsetTopm:0,
+        showTime:1100,
+        onLoadBackEnd:function(i,e){
+            console.log("onLoadBackEnd:"+i);
+        }
+        ,onLoadBackStart:function(i,e){
+            console.log("onLoadBackStart:"+i);
+        }
+    });
+</script>
+
+</body>
+</html>

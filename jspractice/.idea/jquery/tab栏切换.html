@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            float: left;
+            /* margin-left: 10px; */
+            /* text-align: center; */
+            width: 100px;
+            text-align: center;
+            background-color: rgb(156, 156, 147);
+            /* background-color: rgb(158, 156, 154); */
+             /* border-bottom: 1px solid black;
+             border-right:1px solid black; ; */
+        }
+
+      ul{
+           /* width: 405px;
+           border-top: 1px solid black;
+            border-left:1px solid black; ;
+            margin-left: 2px; */
+            width: 600px;
+            height: 25px;
+            /* color: rgb(204, 119, 130);
+            */
+      }
+      /* .current{
+
+        border-left:1px solid black; ;
+
+      } 
+            */
+
+          
+       
+
+        /* .tablist {} */
+
+        .content{
+                   width: 600px;
+                   height: 400px;
+                   overflow: hidden;
+        }
+        .item{
+            width: 600px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab">
+        <div class="tablist">
+            <ul>
+                <li class="current">商品介绍</li>
+                <li>规格和包装</li>
+                <li>售后</li>
+                <li>评价</li>
+            </ul>
+        </div>
+        <div class="content">  
+            <div class="item"  style="display: block;">你好，是一个汉语词语，拼音是nǐ hǎo，是汉语中打招呼的敬语常用词语。作为一般对话的开场白。这也是个最基本的汉语词语。主要用于打招呼、请教别人问题时，或者单纯表示礼貌的时候等。</div>
+            <div class="item">“你好”是对别人的一种礼貌的问候，遇到认识的人或陌生的人都可以说。
+                “你好”主要用于打招呼请教别人问题前的时候，或者单纯表示礼貌的时候等。
+                “你好”的表达情感比较中性，与熟人说有点过于拘束，多和非熟人群体应用，表达一种礼貌。</div>
+            <div class="item">1. “你好”是一个习惯问候语。
+                "How are you?" is a conventional greeting.
+                2. 你好，真巧啊!
+                Hello there, what a coincidence!
+                3. 你好，史蒂文斯.
+                Hi there, Stevens.</div>
+            <div class="item">Hello.Hi.Ahoy.
+                都是英语中的问候，其中Ahoy是hello诞生之前“喂”的意思，自从hello随着电话的发明风行之后，这个词就不常用了。也有人认为 Ahoy是日语问候的说法。</div>
+        </div>
+
+
+
+
+    </div>
+
+
+    <script>
+
+$(function(){
+ $("li").mouseover(function(){
+    $(this).css("background"," rgb(204, 119, 130)");
+    $(this).siblings().css("background","");
+    var index=$(this).index();
+    $(".content div").eq(index).show();
+    $(".content div").eq(index).siblings().hide();
+
+   
+
+
+
+
+
+ })
+
+
+
+
+
+})
+
+    </script>
+</body>
+
+</html>

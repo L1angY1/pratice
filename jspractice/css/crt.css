@@ -1,0 +1,36 @@
+body{
+    background:#1e77c0;
+    background-image: linear-gradient(to right,#bbe79e,#1e77c0);
+    background-image: -webkit-linear-gradient(to  right,#bbe79e,#1e77c0);
+}
+#content1{
+    /* display: block; */
+    border: 2px solid rgb(117, 112, 112);
+    width: 220px;
+    height: 160px;
+    position: relative;
+    border-radius: 20px;
+    top:300px;
+    left:660px;
+    }
+h2{
+        color: rgb(95, 92, 92);
+        position:relative;
+        line-height: 25px;
+        text-align: center;
+        
+        }
+form{
+        margin: 5px;
+        color:rgb(95, 92, 92) ;
+        }
+.b{
+            /* color: rgb(95, 92, 92);  */
+          display: inline-block;
+          margin: 10px;
+        }
+#es{
+        color: rgb(95, 92, 92);
+        position: relative;
+        left: 70px;
+        }

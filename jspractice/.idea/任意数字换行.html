@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function show(s) {
+        var re = " ";
+        var length = s.length;
+        for (var i = 0, j = 1; i < length; i++, j++) {
+            re += s[i];
+            if (j && j % 5 == 0) {
+                re += '<br />';
+            }
+        }
+        return re;
+    }
+
+    var a = "19970215";
+    document.write(show(a));
+
+
+</script>
+</body>
+</html>

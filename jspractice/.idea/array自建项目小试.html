@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function creatp(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    var per=new creatp("sun",18);
+    var per1=new creatp("wu",15);
+    var na=new Array(per,per1);
+    function getadult(arr){
+        var adult=new Array();
+        for(var i=0;i<na.length;i++){
+            var p=arr[i];
+            if (p.age>=18){
+                adult.push(p)
+
+            }
+        }
+        return adult;
+    }
+    console.log(getadult(na))
+
+
+
+
+</script>
+
+</body>
+</html>

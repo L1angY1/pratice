@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+
+
+
+
+
+        }
+     #out{
+            width:426px; /*图片的宽高度自适应*/
+            padding:10px;/*内边距为10*/
+            margin:50px auto;/*让整个div居中*/
+            background-color:#66FFFF;/*设置背景颜色*/
+            text-align:center;/*使按钮居中*/
+        }
+
+      #b1,#b2{
+
+           margin-left: auto;
+
+      }
+
+
+    </style>
+    <script type="text/javascript">
+
+        window.onload=function(){
+            //获取img标签
+        var img=document.getElementById("i1");
+        //将图片路径存在数组里
+        var imgArr=["img/2.jpg","img/3.png","img/4.png"]
+        //定义一个变量，作为索引
+        var index=0;
+        //开启一个定时器
+        var timer;
+        var b1=document.getElementById("b1")
+        var b2=document.getElementById("b2")
+
+
+            b1.onclick = function(){
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    img.src = imgArr[index];
+                    index++;
+                    if (index >= imgArr.length) {
+
+                        index = 0;
+                    }
+                    //index=index%imgArr.length;
+
+                }, 1000)
+
+        }
+
+       b2.onclick=function(){
+          clearInterval(timer);
+
+
+
+
+       }
+
+       
+
+        }
+    </script>
+</head>
+<body>
+    <div id="out"><img  id="i1"src="img/2.jpg" style="width: 400px;"></div>
+    <br> </br>
+    <button id="b1">开始</button>
+    <button id="b2">停止</button>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            margin: 10px;
+            background-color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        function getStyle(obj, name) {              
+            // if (window.getComputedStyle) {
+            //     return getComputedStyle(obj, null)[name]; //适用于所有浏览器
+            // } else {
+            //     return obj.currentStyle[name]; //元素.currentstyle.样式名（读取的当前的）只可以用于ie
+            // }
+          return window.getComputedStyle?getComputedStyle(obj,null)[name]:obj.currentStyle[name];//使用了三步运算符
+        }
+       window.onload=function(){
+        var box1=document.getElementById("box1");
+        var bt1=document.getElementById("bt1");
+        bt1.onclick=function(){
+            alert(getStyle(box1,"width")) 
+
+
+
+        }
+        
+       }
+
+
+        // window.onload = function () {
+        //     var bt = document.getElementById("bt1");
+        //     bt.onclick = function () {
+        //         //       box1.style.width ="300px"
+        //         alert(getStyle(box1, "width"))
+        //     }
+        // }
+
+
+    //     window.onload=function(){
+    //    var box1=document.getElementById("box1");
+    //    var bt1 = document.getElementById("bt1");
+    //    bt1.onclick = function(){
+    //    box1.style.backgroundColor="yellow";//带有-的需要用驼峰命名来
+    //     //js通过style修改的都是内联样式（优先级较高）
+    //     //元素.style.样式名= "样式值"
+    //    }}
+
+
+        // window.onload = function () {
+        //     var bt = document.getElementById("bt1");
+        //     var box1=document.getElementById("box1");
+        //     bt.onclick = function () {
+        //             //   box1.style.width ="300px"
+        //         alert(box1.clientWidth);
+        //         // alert(box1.offsetWidth)
+        //     }
+        // }
+
+    </script>
+</head>
+
+<body>
+    <div><button id="bt1">点击</button></div>
+    <div id="box1"></div>
+</body>
+
+</html>

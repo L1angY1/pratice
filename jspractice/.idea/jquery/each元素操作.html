@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        $(function(){
+            var arr=["red",'blue','black']
+            var sum=0;
+
+            //遍历方法each(function(index,domEle){ })
+             $('div').each(function(i,domEle){
+
+             $(domEle).css("color",arr[i])
+             sum+=parseInt($(domEle).text())
+            
+             })
+
+           alert(sum);
+           //2.可以遍历对象
+            $.each(obj,function(index,domEle){}
+            )
+
+
+        })
+    </script>
+</body>
+</html>

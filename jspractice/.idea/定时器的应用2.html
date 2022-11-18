@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+
+
+        }
+    </style>
+      <script type="text/javascript">
+        //定义一个函数，用来获取指定元素的当前样式
+    function getStyle(obj, name) {
+        // if (window.getComputedStyle) {
+        //     return getComputedStyle(obj, null)[name]; //适用于所有浏览器
+        // } else {
+        //     return obj.currentStyle[name]; //元素.currentstyle.样式名（读取的当前的）只可以用于ie
+        // }
+        return window.getComputedStyle ? getComputedStyle(obj, null)[name] : obj.currentStyle[name];//使用了三步运算符
+    }
+    var timer;
+    window.onload = function () {
+
+        var box1 = document.getElementById("box1");
+        var b1 = document.getElementById("b1");
+        var b2 = document.getElementById("b2");
+//         b1.onclick = function () {
+
+//             clearInterval(timer);
+//             timer = setInterval(function () {
+
+//                 oldLeft = parseInt(getStyle(box1, "left"));
+//                 newLeft = oldLeft + 10
+//                 box1.style.left = newLeft + "px";
+//                 if (newLeft >800) {
+//                     newLeft=800;
+//                     clearInterval(timer)
+
+
+//                 }
+
+
+
+//             }, 30)
+//         }
+//         b2.onclick = function () {
+
+//             clearInterval(timer);
+//              timer = setInterval(function () {
+
+//                 oldLeft = parseInt(getStyle(box1, "left"));
+//                 newLeft = oldLeft - 10
+//                 box1.style.left = newLeft + "px";
+//                 if (newLeft<0) {
+//                      newLeft=0;
+//                     clearInterval(timer)
+
+
+//                 }
+
+
+
+//             }, 30)
+// }
+
+b1.onclick=function(){
+
+     move(box1,800,10)
+
+
+}
+
+b2.onclick=function(){
+
+     move(box1,0,10)
+}
+    }
+
+    function move(obj,target,speed){
+          
+       
+        if (target > 0) {
+            clearInterval(timer);
+            timer = setInterval(function () {
+            oldLeft = parseInt(getStyle(obj, "left"));
+            newLeft = oldLeft +speed
+            obj.style.left = newLeft + "px";
+                if (newLeft > target) {
+                    newLeft = target;
+                    clearInterval(timer)
+                }
+
+             }, 30)
+        }
+        else{
+
+            clearInterval(timer);
+            timer = setInterval(function () {
+            oldLeft = parseInt(getStyle(obj, "left"));
+            newLeft = oldLeft-speed
+            obj.style.left = newLeft + "px";
+
+                if (newLeft < target) {
+                    newLeft = target;
+                    clearInterval(timer)
+                }
+
+             }, 30)
+
+
+
+
+        }
+        
+        }
+
+
+
+
+
+
+    
+</script>
+</head>
+<body>
+    <div id="box1" style="width: 100px;height: 100px; position:absolute;background-color: rgb(179, 122, 122);"></div>
+    <br></br>
+    <button id="b1" style="margin-top: 400px;">右边移动</button>
+    <button id="b2" style="margin-top: 400px;">左边移动</button>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <div style="height: 200px;width: 200px;background-color: brown;"></div>
+
+
+    <script>
+        $(function () {
+            // $("button").eq(0).click(function () {
+            //     $("div").show(1000, function () {
+            //         alert("我回来了")
+            //     }) })
+            // $("button").eq(1).click(function () {
+            //     $("div").hide(1000, function () {
+            //         alert("我隐藏了")
+            //         }) })
+            // $("button").eq(2).click(function () {
+            //     $("div").toggle(1000, function () {
+            //         alert("变换")
+            //             }) })
+            $("button").eq(0).click(function () {
+                $("div").slideDown(1000, function () {
+                    alert("我回来了")//下拉
+                }) })
+            $("button").eq(1).click(function () {
+                $("div").slideUp(1000, function () {
+                    alert("我隐藏了")//上拉
+                    }) })
+            $("button").eq(2).click(function () {
+                $("div").slideToggle(1000, function () {
+                    alert("变换")
+                        }) })
+
+
+
+
+                    })
+              
+
+
+    </script>
+</body>
+
+</html>

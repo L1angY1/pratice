@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<script src="jquery.min.js"></script>
+	<title>jquery点击按钮更改input的value值</title>
+</head>
+<body>
+    <span><button type="button" style="height: 40px;" id="btn1">-</button></span>
+    <input type="text" name="chkfile" style="height: 34px; text-align: center;" class="text" min="8" step="1" max="32" value="8" placeholder="8" readonly="readonly" id="v1">
+    <span><button type="button" style="height: 40px;" id="btn2">+</button></span>
+<script>
+  // -按钮：
+  $('#btn1').click(function(){
+    var num = $("#v1").val();
+    if (num <16 && num>8) {
+      $('#v1').val(num-1);
+    }else{
+      $('#v1').val(num);
+    }
+  });
+  // +按钮：
+  $('#btn2').click(function(){
+    var num = $("#v1").val();
+    if (num <15 && num>7) {
+      var bl = Number(num)+1;
+      $('#v1').val(bl);
+    }else{
+      $('#v1').val(num);
+    }
+  });
+</script>
+</body>
+</html>

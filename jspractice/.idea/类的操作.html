@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <style type="text/css">
+       .b1{
+               width: 100px;
+               height: 100px;
+               background-color: brown;
+
+
+       }
+       .b2{
+               /* width: 200px; */
+               height: 200px;
+               background-color: rgb(194, 243, 17);
+
+
+       }
+
+
+
+
+
+
+
+
+
+      </style>
+
+
+      <script type="text/javascript">
+      
+             window.onload=function(){
+           var bt1=document.getElementById("bt1");
+           var box1=document.getElementById("box1");
+           var bt2=document.getElementById("bt2");
+           bt1.onclick=function(){
+
+            //    box1.style.width="200px"
+
+            // box1.className="b2";
+
+
+            // box1.className+=" b2"
+            addClass(box1,"b2")
+            // alert(hascn(box1,"b2"));
+           }
+
+             bt2.onclick=function(){
+
+
+               removeclass(box1,"b2");
+
+
+
+
+             }
+
+
+             }
+              //定义一个函数向指定对象添加一个class属性值
+              function addClass(obj,cn){
+                  if(!hascn(obj,cn)){
+                      obj.className +=" "+cn;
+                }
+                  
+
+              }
+                
+               function hascn(obj,cn){
+                // 正则表达式检查是否含有class
+                    // var reg=/\bb2\b/;
+                     var reg=new RegExp("\\b"+cn+"\\b")
+                  return reg.test(obj.className)
+
+               }
+            //    删除一个元素中追定的class属性
+               function removeclass(obj,cn){
+                var reg=new RegExp("\\b"+cn+"\\b")
+
+                   obj.className= obj.className.replace(reg,"");
+
+
+
+
+
+
+               }
+
+      
+      
+      
+      
+      
+      
+      </script>
+
+
+
+
+</head>
+<body>
+
+    <button id="bt1">增加样式</button>
+    <button id="bt2">删除样式</button>
+<br></br>
+    <div id="box1" class="b1"></div>
+</body>
+</html>

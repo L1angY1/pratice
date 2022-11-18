@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        //=>函数的使用
+        // let fn = function () {
+
+        //     alert('原来的写法')
+
+        // }
+
+        // let fun = () => {
+
+        //     alert('新写法')
+
+        // }
+        //1.箭头函数的this是静态的，this始终是指向函数声明时的所在函数作用域下的this的值
+           function getname() {
+
+                console.log(this.name);
+
+            }
+
+            let getname2 = () => {
+
+                console.log(this.name)
+            }
+            window.name = "流星"
+            const any = {
+                name: '小雨'
+            }
+            //直接调用是一样的
+            // getname();
+            // getname2();
+
+            //call()方法的调用
+             getname.call(any);//小雨
+             getname2.call(any);//流星
+
+
+             //不能构造实例化对象
+             //不能使用argument变量
+
+
+             //箭头函数的简写
+             //当只有一个形参的时候，可以去掉括号
+             let add=a=>{
+
+                 return a+a;
+
+             }
+             console.log(add(8));
+             //当码体只有一条语句的时候，此时return必须省略
+             let pow=a=>a*a;
+             alert(pow(10))
+
+
+    </script>
+</body>
+
+</html>

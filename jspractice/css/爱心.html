@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        div[class=main]
+        {
+              margin: 300px;
+              transform: rotate(45deg);
+          }
+        /*div:hover{*/
+        /*    background-image: url("tu/yy.png");*/
+        /*    background-position: 1% 1%;*/
+        /*}*/
+          @-webkit-keyframes dh {
+
+
+              0% {background: #FCFCFC;}
+              10% {background: #E89C9C;}
+              20% {background: #E82929;}
+              30% {background: #EC5E1B;}
+              40% {background: #E39B88;}
+              50% {background: #E39818;}
+              60% {background: #D7BE76;}
+              70% {background: #C3D24F;}
+              80% {background: #5ECD17;}
+              90% {background: #28D986;}
+              100% {background: #066ba5;}
+
+          }
+
+
+
+        .d1 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            background: lightgoldenrodyellow;
+            border:1px #EF94A5;
+            margin: 300px 0px 0px 300px;
+            -webkit-animation:dh 3s linear 0s infinite alternate;
+        }
+        .d2{
+            float: left;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            background: lightgoldenrodyellow;
+            border:1px #EF94A5;
+            margin: 250px 0px 0px 0px;
+            position: relative;
+            right: 50px;
+            -webkit-animation:dh 3s linear 0s infinite alternate;
+
+        }
+        .sq{
+            float: left;
+            width: 100px;
+            height: 100px;
+            border:1px #EF94A5 ;
+            margin: 300px 0px 0px 0px;
+            position: relative;
+            right:150px;
+            background: lightgoldenrodyellow;
+            -webkit-animation:dh 3s linear 0s infinite alternate;
+        }
+
+    </style>
+
+
+
+
+</head>
+<body>
+<div class="main">
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="sq"></div>
+</div>
+</body>
+</html>

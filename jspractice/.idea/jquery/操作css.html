@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+   <style>
+         .cl1{
+               width: 100px;
+                height: 100px;
+                background-color: brown;
+                margin: 200px auto;
+                transition: all 0.5s;
+               
+         }
+         .cl2{
+
+            background-color: rgb(199, 169, 169);
+             transform:rotate(360deg)
+              /* transition: margin-right 2s; */
+
+
+
+         }
+             
+          
+
+
+   </style>
+</head>
+<body>
+    <div class="cl1">
+
+    </div>
+    <!-- <button>
+        change
+    </button> -->
+    <script>
+         $(function(){
+
+                  $("div").click(function(){
+                           $("div").toggleClass("cl2")
+                         
+
+
+
+
+                  })
+
+
+
+
+         })
+
+
+    </script>
+</body>
+</html>

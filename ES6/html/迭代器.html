@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          const arr=['胡歌','陈坤','彭于晏']
+        //   for(let i of arr){
+
+        //  console.log(i);
+
+        //   }
+       //保存的是键值
+         
+      let iterator=arr[Symbol.iterator]();
+      console.log(iterator.next());
+      //原理
+      //1.创建一个指针对象，指向当前数据结构的起始位置
+      //2.第一次抵用对象的next方法，指针自动指向数据结构的第一个成员
+      //3.接下来不断调用next方法，指针一直往后移动，知道指向最后一个成员
+      //4.每调用next方法返回一个包含value和done属性的对象
+      
+
+    </script>
+</body>
+</html>

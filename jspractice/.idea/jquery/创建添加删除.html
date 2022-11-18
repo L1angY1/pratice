@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+   
+        <ul>
+            <li>我是1</li>
+
+
+        </ul>
+    <div class="first">我是第一个div</div>
+
+    <script>
+        $(function () {
+            var li = $("<li>我是新增的li</li>")
+            //1.内部添加
+            //1.1添加子节点：父节点.append(子节点)
+            // $('ul').append(li)
+            //放在最后面
+              //2.2.父节点.prepend(子节点)
+            //$('ul').prepend(li)
+            //放在最前面
+              //2.外部添加
+              var div=$("<div>我是后增加的</div>")
+            $('.first').after(div)//放在后面，before就是放在前面
+            //   3.删除
+                $('.first').remove()//删除相应节点
+                $(ul).empty()//清空
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>

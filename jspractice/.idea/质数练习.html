@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>质数练习</title>
+    <script type="text/javascript">
+     var  num = prompt("输入一个数字：")
+if ( num < 1) {
+    alert("数字不合法");
+}
+else  {
+    var flag =true;
+
+
+    for (var i =2;i<num;i++){
+
+        if ( num%i ==0  ){
+            flag = false;
+            alert("不是质数")
+        }
+    }
+    if (flag=true){
+
+alert("是质数")
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+}
+    </script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水仙花数</title>
+
+    <script  type="text/javascript">
+        var a;
+        var b;
+        var c;
+        var count;
+        for (var i=100;i<1000;i++){
+            a=parseInt(i/100);
+            b=parseInt(i%100/10);
+            c=parseInt(i%100%10);
+            count= Math.pow(a, 3)+Math.pow(b,3)+Math.pow(c, 3);
+        if (count==i){
+            document.write(count+"<br>")   ;
+            }
+           }
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+</head>
+<body>
+
+</body>
+</html>

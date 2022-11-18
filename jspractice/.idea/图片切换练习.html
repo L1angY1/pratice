@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        #out{
+            width:426px; /*图片的宽高度自适应*/
+            padding:10px;/*内边距为10*/
+            margin:50px auto;/*让整个div居中*/
+            background-color:#66FFFF;/*设置背景颜色*/
+            text-align:center;/*使按钮居中*/
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var bt1 = document.getElementById("prev");
+            var bt2 = document.getElementById("next");
+            var pb=document.getElementById("pid");
+            var img = document.getElementsByTagName("img")[0];
+            var imgarr = ["img/2.jpg", "img/3.png", "img/4.png"];
+            var i = 0;
+            pb.innerHTML=(i+1)+"/"+imgarr.length;
+            bt1.onclick = function () {
+                i--;
+                if (i < 0) {
+                    i = imgarr.length - 1;
+
+
+                }
+                img.src = imgarr[i];
+                pb.innerHTML=(i+1)+"\\"+imgarr.length;
+            }
+            bt2.onclick = function () {
+                i++;
+                if (i > imgarr.length - 1) {
+                    i = 0;
+
+                }
+                img.src = imgarr[i];
+                pb.innerHTML=(i+1)+"/"+imgarr.length;
+
+
+            }
+        }
+
+
+    </script>
+
+
+</head>
+<body>
+<div id="out">
+    <p id="pid"></p>
+    <img src="img/2.jpg" alt="永劫1"   style="width: 410px"></br>
+
+    <button id="prev">上一张</button>
+    <button id="next">下一张</button>
+</div>
+
+
+
+</body>
+</html>
